@@ -20,7 +20,10 @@
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Dependencies -->
         <org.projectlombok.version>1.18.34</org.projectlombok.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 	</properties>
@@ -53,6 +56,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+			<!-- Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 		
 		<!-- Extra -->
             <!-- Lombok -->

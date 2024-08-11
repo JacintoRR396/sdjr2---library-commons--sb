@@ -1,18 +1,23 @@
 package com.sdjr2.sb.library_commons.services;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+
 import com.sdjr2.sb.library_commons.exceptions.AppExceptionCodeEnum;
 import com.sdjr2.sb.library_commons.exceptions.CustomException;
 import com.sdjr2.sb.library_commons.models.dto.BaseDTO;
 import com.sdjr2.sb.library_commons.models.dto.search.SearchBodyDTO;
 import com.sdjr2.sb.library_commons.models.entities.BaseEntity;
+import com.sdjr2.sb.library_commons.models.enums.RoleTypeEnum;
 import com.sdjr2.sb.library_commons.models.mappers.BaseMapper;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * {@link BaseService} interface.
@@ -29,7 +34,7 @@ import java.util.Objects;
  * @author Jacinto R^2
  * @version 1.0
  * @category Service
- * @upgrade 24/07/19
+ * @upgrade 24/08/11
  * @since 23/06/10
  */
 public interface BaseService<T extends BaseDTO> {
@@ -120,4 +125,30 @@ public interface BaseService<T extends BaseDTO> {
 	 * @param id element identifier.
 	 */
 	void delete ( Long id );
+	
+	/**
+	 * Get Role from Request.
+	 *
+	 * @param securityContext  Security Context.
+	 * @return an role {@link String}.
+	 */
+	default String getRoleFromRequest(SecurityContext securityContext) {
+		String role = RoleTypeEnum.ROLE_ADMIN.name();
+		
+		if ( Objects.nonNull( securityContext ) ) {
+			Authentication auth = securityContext.getAuthentication();
+			if ( Objects.nonNull( auth ) ) {
+				List<GrantedAuthority> authorities = new ArrayList<>( auth.getAuthorities() );
+				if ( authorities.stream().anyMatch(
+						grantedAuth -> grantedAuth.getAuthority().equalsIgnoreCase( RoleTypeEnum.ROLE_MEMBER.name() ) ) ) {
+					role = RoleTypeEnum.ROLE_MEMBER.name();
+				} else if ( authorities.stream().anyMatch(
+						grantedAuth -> grantedAuth.getAuthority().equalsIgnoreCase( RoleTypeEnum.ROLE_USER.name() ) ) ) {
+					role = RoleTypeEnum.ROLE_USER.name();
+				}
+			}
+		}
+		
+		return role;
+	}
 }
