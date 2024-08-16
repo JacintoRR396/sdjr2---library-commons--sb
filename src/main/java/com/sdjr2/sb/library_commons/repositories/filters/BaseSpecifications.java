@@ -1,4 +1,4 @@
-package com.sdjr2.sb.library_commons.repositories;
+package com.sdjr2.sb.library_commons.repositories.filters;
 
 import com.sdjr2.sb.library_commons.exceptions.AppExceptionCodeEnum;
 import com.sdjr2.sb.library_commons.exceptions.CustomException;

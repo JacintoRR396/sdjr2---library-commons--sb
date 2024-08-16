@@ -133,7 +133,7 @@ public interface BaseService<T extends BaseDTO> {
 	 * @return an role {@link String}.
 	 */
 	default String getRoleFromRequest(SecurityContext securityContext) {
-		String role = RoleTypeEnum.ROLE_ADMIN.name();
+		String role = RoleTypeEnum.ROLE_USER.name();
 		
 		if ( Objects.nonNull( securityContext ) ) {
 			Authentication auth = securityContext.getAuthentication();
@@ -143,8 +143,8 @@ public interface BaseService<T extends BaseDTO> {
 						grantedAuth -> grantedAuth.getAuthority().equalsIgnoreCase( RoleTypeEnum.ROLE_MEMBER.name() ) ) ) {
 					role = RoleTypeEnum.ROLE_MEMBER.name();
 				} else if ( authorities.stream().anyMatch(
-						grantedAuth -> grantedAuth.getAuthority().equalsIgnoreCase( RoleTypeEnum.ROLE_USER.name() ) ) ) {
-					role = RoleTypeEnum.ROLE_USER.name();
+						grantedAuth -> grantedAuth.getAuthority().equalsIgnoreCase( RoleTypeEnum.ROLE_ADMIN.name() ) ) ) {
+					role = RoleTypeEnum.ROLE_ADMIN.name();
 				}
 			}
 		}
