@@ -2,19 +2,19 @@
 
 **Common Library** es una librería transversal diseñada para centralizar utilidades, configuraciones base y código repetitivo para el ecosistema de proyectos RESTful de `com.ssdjr2.sbc`.
 
-Su objetivo es acelerar el desarrollo de nuevos microservicios proporcionando una base sólida construida sobre **Java 21**, **Spring Framework 6** y **Spring Boot 3**.
+Su objetivo es acelerar el desarrollo de nuevos microservicios proporcionando una base sólida construida sobre **Java 25**, **Spring Framework 6** y **Spring Boot 3**.
 
 ## 🛠 Tech Stack
 
 El proyecto utiliza las últimas versiones estables del ecosistema Spring y herramientas de productividad:
 
-* **Core:** Java 21 (LTS)
-* **Framework:** Spring Boot 3.5.8 (Spring Framework 6)
+* **Core:** Java 25 (LTS)
+* **Framework:** Spring Boot 3.5.14 (Spring Framework 6)
 * **Persistencia:** Spring Data JPA + Hibernate Validator
 * **Seguridad:** Spring Security
-* **Mapping:** MapStruct 1.5.5.Final
-* **Boilerplate reduction:** Project Lombok
-* **Utilities:** Apache Commons Lang3
+* **Mapping:** MapStruct 1.6.3
+* **Boilerplate reduction:** Project Lombok 1.18.46
+* **Utilities:** Apache Commons Lang 3.18.0
 
 ## 📦 Instalación
 
@@ -24,7 +24,7 @@ Para utilizar esta librería en otros proyectos (microservicios), añade la sigu
 <dependency>
     <groupId>com.ssdjr2.sbc</groupId>
     <artifactId>tool-common-library</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -55,8 +55,8 @@ Al heredar o importar esta librería, tu proyecto obtiene soporte inmediato para
 ## 🚀 Desarrollo y Contribución
 
 ### Prerrequisitos
-* JDK 21 instalado.
-* Maven Compiler 3.11.0 o superior.
+* JDK 25 instalado.
+* Maven Compiler 3.15.0 o superior.
 
 ### Construcción Local
 
@@ -79,6 +79,7 @@ Dado que es una librería común, el ms que la importe debería mantener una est
 com.ssdjr2.sbc.xxx
 ├── config        # Configuraciones globales (Auth, Doc, Ex, Interceptors, Properties, Beans, etc).
 ├── controllers   # Controladores para la capa presentación.
+├── exceptions    # Excepciones genéricas para la gestión de errores.
 ├── models        # DTOs, Enums, Entities, Mappers, Validations, etc.
 ├── repositories  # Repositorios, Filtros, etc para la capa de datos.
 ├── services      # Servicios para la capa de negocio.
