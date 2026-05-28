@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>com.ssdjr2.sbc</groupId>
+	<groupId>com.ssdjr2.own.sbc</groupId>
 	<artifactId>tool-common_library--sb</artifactId>
 	<version>0.0.3-SNAPSHOT</version>
 	<name>Common Library</name>

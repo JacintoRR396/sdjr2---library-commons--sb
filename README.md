@@ -1,6 +1,6 @@
-# Common Library (`tool-common-library`)
+# Common Library (`tool-common_library--sb`)
 
-**Common Library** es una librería transversal diseñada para centralizar utilidades, configuraciones base y código repetitivo para el ecosistema de proyectos RESTful de `com.ssdjr2.sbc`.
+**Common Library** es una librería transversal diseñada para centralizar utilidades, configuraciones base y código repetitivo para el ecosistema de proyectos RESTful de `com.ssdjr2.own.sbc`.
 
 Su objetivo es acelerar el desarrollo de nuevos microservicios proporcionando una base sólida construida sobre **Java 21**, **Spring Framework 6** y **Spring Boot 3**.
 
@@ -22,8 +22,8 @@ Para utilizar esta librería en otros proyectos (microservicios), añade la sigu
 
 ```xml
 <dependency>
-    <groupId>com.ssdjr2.sbc</groupId>
-    <artifactId>tool-common-library</artifactId>
+    <groupId>com.ssdjr2.own.sbc</groupId>
+    <artifactId>tool-common_library--sb</artifactId>
     <version>0.0.3-SNAPSHOT</version>
 </dependency>
 ```
@@ -76,7 +76,7 @@ mvn clean install
 Dado que es una librería común, el ms que la importe debería mantener una estructura de paquetes agnóstica a las funcionalidades que proporciona:
 
 ```text
-com.ssdjr2.sbc.xxx
+com.ssdjr2.own.sbc.xxx
 ├── config        # Configuraciones globales (Auth, Doc, Ex, Interceptors, Properties, Beans, etc).
 ├── controllers   # Controladores para la capa presentación.
 ├── exceptions    # Excepciones genéricas para la gestión de errores.
@@ -88,4 +88,4 @@ com.ssdjr2.sbc.xxx
 
 ## 📝 Licencia
 
-Este proyecto es propiedad de `com.ssdjr2.sbc`.
+Este proyecto es propiedad de `com.ssdjr2.own.sbc`.
