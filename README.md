@@ -2,13 +2,13 @@
 
 **Common Library** es una librería transversal diseñada para centralizar utilidades, configuraciones base y código repetitivo para el ecosistema de proyectos RESTful de `com.ssdjr2.sbc`.
 
-Su objetivo es acelerar el desarrollo de nuevos microservicios proporcionando una base sólida construida sobre **Java 25**, **Spring Framework 6** y **Spring Boot 3**.
+Su objetivo es acelerar el desarrollo de nuevos microservicios proporcionando una base sólida construida sobre **Java 21**, **Spring Framework 6** y **Spring Boot 3**.
 
 ## 🛠 Tech Stack
 
 El proyecto utiliza las últimas versiones estables del ecosistema Spring y herramientas de productividad:
 
-* **Core:** Java 25 (LTS)
+* **Core:** Java 21 (LTS)
 * **Framework:** Spring Boot 3.5.14 (Spring Framework 6)
 * **Persistencia:** Spring Data JPA + Hibernate Validator
 * **Seguridad:** Spring Security
@@ -55,7 +55,7 @@ Al heredar o importar esta librería, tu proyecto obtiene soporte inmediato para
 ## 🚀 Desarrollo y Contribución
 
 ### Prerrequisitos
-* JDK 25 instalado.
+* JDK 21 instalado.
 * Maven Compiler 3.15.0 o superior.
 
 ### Construcción Local
