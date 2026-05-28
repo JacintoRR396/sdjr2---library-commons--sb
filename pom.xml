@@ -11,7 +11,7 @@
 	</parent>
 	
 	<groupId>com.ssdjr2.sbc</groupId>
-	<artifactId>tool-common-library</artifactId>
+	<artifactId>tool-common_library--sb</artifactId>
 	<version>0.0.3-SNAPSHOT</version>
 	<name>Common Library</name>
 	<description>
@@ -27,11 +27,12 @@
 		<maven-surefire-plugin>3.5.3</maven-surefire-plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <!-- Dependencies -->
         <org.lombok.version>1.18.46</org.lombok.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
-		<org.apache.commons.version>3.18.0</org.apache.commons.version>
 		<org.mockito.version>5.15.2</org.mockito.version>
+		<org.apache.commons.version>3.18.0</org.apache.commons.version>
 	</properties>
 	
 	<dependencies>
@@ -56,7 +57,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-			<dependency>
+		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
@@ -66,18 +67,18 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
-			<!-- Spring Devtools -->
+			<!-- Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+		<!-- Spring Devtools -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-			<!-- Security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 		
 		<!-- Extra -->
             <!-- Lombok -->
